@@ -16,6 +16,11 @@
 		551D04482A26614B003B0CF9 /* TivBibleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551D04472A26614B003B0CF9 /* TivBibleTests.swift */; };
 		551D04522A26614B003B0CF9 /* TivBibleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551D04512A26614B003B0CF9 /* TivBibleUITests.swift */; };
 		551D04542A26614B003B0CF9 /* TivBibleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551D04532A26614B003B0CF9 /* TivBibleUITestsLaunchTests.swift */; };
+		551D04652A2661FD003B0CF9 /* tivBibleData.json in Resources */ = {isa = PBXBuildFile; fileRef = 551D04642A2661FD003B0CF9 /* tivBibleData.json */; };
+		551D04682A2662E1003B0CF9 /* TivBibleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551D04672A2662E1003B0CF9 /* TivBibleData.swift */; };
+		551D046A2A266355003B0CF9 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551D04692A266355003B0CF9 /* Book.swift */; };
+		551D046C2A266368003B0CF9 /* Chapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551D046B2A266368003B0CF9 /* Chapter.swift */; };
+		551D046E2A266376003B0CF9 /* Verse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551D046D2A266376003B0CF9 /* Verse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +53,11 @@
 		551D044D2A26614B003B0CF9 /* TivBibleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TivBibleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		551D04512A26614B003B0CF9 /* TivBibleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TivBibleUITests.swift; sourceTree = "<group>"; };
 		551D04532A26614B003B0CF9 /* TivBibleUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TivBibleUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		551D04642A2661FD003B0CF9 /* tivBibleData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tivBibleData.json; sourceTree = "<group>"; };
+		551D04672A2662E1003B0CF9 /* TivBibleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TivBibleData.swift; sourceTree = "<group>"; };
+		551D04692A266355003B0CF9 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
+		551D046B2A266368003B0CF9 /* Chapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chapter.swift; sourceTree = "<group>"; };
+		551D046D2A266376003B0CF9 /* Verse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Verse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,11 +108,11 @@
 		551D04302A26614A003B0CF9 /* TivBible */ = {
 			isa = PBXGroup;
 			children = (
-				551D04312A26614A003B0CF9 /* TivBibleApp.swift */,
-				551D04332A26614A003B0CF9 /* ContentView.swift */,
-				551D04352A26614B003B0CF9 /* Assets.xcassets */,
-				551D043A2A26614B003B0CF9 /* Persistence.swift */,
-				551D043C2A26614B003B0CF9 /* TivBible.xcdatamodeld */,
+				551D04662A26624A003B0CF9 /* Models */,
+				551D04632A2661CD003B0CF9 /* Features */,
+				551D04622A2661C0003B0CF9 /* App */,
+				551D04612A2661B8003B0CF9 /* Resources */,
+				551D04602A2661AA003B0CF9 /* DataManager */,
 				551D04372A26614B003B0CF9 /* Preview Content */,
 			);
 			path = TivBible;
@@ -131,6 +141,51 @@
 				551D04532A26614B003B0CF9 /* TivBibleUITestsLaunchTests.swift */,
 			);
 			path = TivBibleUITests;
+			sourceTree = "<group>";
+		};
+		551D04602A2661AA003B0CF9 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				551D043A2A26614B003B0CF9 /* Persistence.swift */,
+				551D043C2A26614B003B0CF9 /* TivBible.xcdatamodeld */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
+		551D04612A2661B8003B0CF9 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				551D04642A2661FD003B0CF9 /* tivBibleData.json */,
+				551D04352A26614B003B0CF9 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		551D04622A2661C0003B0CF9 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				551D04312A26614A003B0CF9 /* TivBibleApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		551D04632A2661CD003B0CF9 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				551D04332A26614A003B0CF9 /* ContentView.swift */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		551D04662A26624A003B0CF9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				551D04672A2662E1003B0CF9 /* TivBibleData.swift */,
+				551D04692A266355003B0CF9 /* Book.swift */,
+				551D046B2A266368003B0CF9 /* Chapter.swift */,
+				551D046D2A266376003B0CF9 /* Verse.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -238,6 +293,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				551D04392A26614B003B0CF9 /* Preview Assets.xcassets in Resources */,
+				551D04652A2661FD003B0CF9 /* tivBibleData.json in Resources */,
 				551D04362A26614B003B0CF9 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -263,10 +319,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				551D04682A2662E1003B0CF9 /* TivBibleData.swift in Sources */,
 				551D043B2A26614B003B0CF9 /* Persistence.swift in Sources */,
+				551D046A2A266355003B0CF9 /* Book.swift in Sources */,
+				551D046E2A266376003B0CF9 /* Verse.swift in Sources */,
 				551D04342A26614A003B0CF9 /* ContentView.swift in Sources */,
 				551D043E2A26614B003B0CF9 /* TivBible.xcdatamodeld in Sources */,
 				551D04322A26614A003B0CF9 /* TivBibleApp.swift in Sources */,
+				551D046C2A266368003B0CF9 /* Chapter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
