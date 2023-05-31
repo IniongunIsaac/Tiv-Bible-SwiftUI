@@ -11,7 +11,7 @@
 		551D04342A26614A003B0CF9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551D04332A26614A003B0CF9 /* ContentView.swift */; };
 		551D04362A26614B003B0CF9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 551D04352A26614B003B0CF9 /* Assets.xcassets */; };
 		551D04392A26614B003B0CF9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 551D04382A26614B003B0CF9 /* Preview Assets.xcassets */; };
-		551D043B2A26614B003B0CF9 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551D043A2A26614B003B0CF9 /* Persistence.swift */; };
+		551D043B2A26614B003B0CF9 /* PersistentStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551D043A2A26614B003B0CF9 /* PersistentStore.swift */; };
 		551D043E2A26614B003B0CF9 /* TivBible.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 551D043C2A26614B003B0CF9 /* TivBible.xcdatamodeld */; };
 		551D04482A26614B003B0CF9 /* TivBibleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551D04472A26614B003B0CF9 /* TivBibleTests.swift */; };
 		551D04522A26614B003B0CF9 /* TivBibleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551D04512A26614B003B0CF9 /* TivBibleUITests.swift */; };
@@ -21,6 +21,14 @@
 		551D046A2A266355003B0CF9 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551D04692A266355003B0CF9 /* Book.swift */; };
 		551D046C2A266368003B0CF9 /* Chapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551D046B2A266368003B0CF9 /* Chapter.swift */; };
 		551D046E2A266376003B0CF9 /* Verse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551D046D2A266376003B0CF9 /* Verse.swift */; };
+		551D04702A2663B8003B0CF9 /* Testament.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551D046F2A2663B8003B0CF9 /* Testament.swift */; };
+		551D04722A2663DB003B0CF9 /* Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551D04712A2663DB003B0CF9 /* Version.swift */; };
+		55D44F202A273E81004A7AE5 /* BooksDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D44F1F2A273E81004A7AE5 /* BooksDataStore.swift */; };
+		55D44F222A27507D004A7AE5 /* DataStoreType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D44F212A27507D004A7AE5 /* DataStoreType.swift */; };
+		55D44F242A2752A5004A7AE5 /* NSManagedObjectContext+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D44F232A2752A5004A7AE5 /* NSManagedObjectContext+Extensions.swift */; };
+		55D44F262A276946004A7AE5 /* NSFetchedResultsController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D44F252A276946004A7AE5 /* NSFetchedResultsController+Extensions.swift */; };
+		55D44F282A276C45004A7AE5 /* NSManagedObject+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D44F272A276C45004A7AE5 /* NSManagedObject+Extensions.swift */; };
+		55D44F2B2A278FF7004A7AE5 /* Code+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D44F2A2A278FF7004A7AE5 /* Code+Utils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,7 +54,7 @@
 		551D04332A26614A003B0CF9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		551D04352A26614B003B0CF9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		551D04382A26614B003B0CF9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		551D043A2A26614B003B0CF9 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		551D043A2A26614B003B0CF9 /* PersistentStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentStore.swift; sourceTree = "<group>"; };
 		551D043D2A26614B003B0CF9 /* TivBible.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TivBible.xcdatamodel; sourceTree = "<group>"; };
 		551D04432A26614B003B0CF9 /* TivBibleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TivBibleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		551D04472A26614B003B0CF9 /* TivBibleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TivBibleTests.swift; sourceTree = "<group>"; };
@@ -58,6 +66,14 @@
 		551D04692A266355003B0CF9 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		551D046B2A266368003B0CF9 /* Chapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chapter.swift; sourceTree = "<group>"; };
 		551D046D2A266376003B0CF9 /* Verse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Verse.swift; sourceTree = "<group>"; };
+		551D046F2A2663B8003B0CF9 /* Testament.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Testament.swift; sourceTree = "<group>"; };
+		551D04712A2663DB003B0CF9 /* Version.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Version.swift; sourceTree = "<group>"; };
+		55D44F1F2A273E81004A7AE5 /* BooksDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksDataStore.swift; sourceTree = "<group>"; };
+		55D44F212A27507D004A7AE5 /* DataStoreType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStoreType.swift; sourceTree = "<group>"; };
+		55D44F232A2752A5004A7AE5 /* NSManagedObjectContext+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+Extensions.swift"; sourceTree = "<group>"; };
+		55D44F252A276946004A7AE5 /* NSFetchedResultsController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSFetchedResultsController+Extensions.swift"; sourceTree = "<group>"; };
+		55D44F272A276C45004A7AE5 /* NSManagedObject+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObject+Extensions.swift"; sourceTree = "<group>"; };
+		55D44F2A2A278FF7004A7AE5 /* Code+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Code+Utils.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,11 +124,12 @@
 		551D04302A26614A003B0CF9 /* TivBible */ = {
 			isa = PBXGroup;
 			children = (
-				551D04662A26624A003B0CF9 /* Models */,
-				551D04632A2661CD003B0CF9 /* Features */,
+				55D44F292A278FCE004A7AE5 /* Extensions */,
 				551D04622A2661C0003B0CF9 /* App */,
 				551D04612A2661B8003B0CF9 /* Resources */,
-				551D04602A2661AA003B0CF9 /* DataManager */,
+				551D04632A2661CD003B0CF9 /* Features */,
+				551D04662A26624A003B0CF9 /* Models */,
+				551D04602A2661AA003B0CF9 /* DataStore */,
 				551D04372A26614B003B0CF9 /* Preview Content */,
 			);
 			path = TivBible;
@@ -143,13 +160,18 @@
 			path = TivBibleUITests;
 			sourceTree = "<group>";
 		};
-		551D04602A2661AA003B0CF9 /* DataManager */ = {
+		551D04602A2661AA003B0CF9 /* DataStore */ = {
 			isa = PBXGroup;
 			children = (
-				551D043A2A26614B003B0CF9 /* Persistence.swift */,
+				551D043A2A26614B003B0CF9 /* PersistentStore.swift */,
 				551D043C2A26614B003B0CF9 /* TivBible.xcdatamodeld */,
+				55D44F1F2A273E81004A7AE5 /* BooksDataStore.swift */,
+				55D44F212A27507D004A7AE5 /* DataStoreType.swift */,
+				55D44F232A2752A5004A7AE5 /* NSManagedObjectContext+Extensions.swift */,
+				55D44F252A276946004A7AE5 /* NSFetchedResultsController+Extensions.swift */,
+				55D44F272A276C45004A7AE5 /* NSManagedObject+Extensions.swift */,
 			);
-			path = DataManager;
+			path = DataStore;
 			sourceTree = "<group>";
 		};
 		551D04612A2661B8003B0CF9 /* Resources */ = {
@@ -172,6 +194,7 @@
 		551D04632A2661CD003B0CF9 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				55D44F1E2A273D9C004A7AE5 /* Splash */,
 				551D04332A26614A003B0CF9 /* ContentView.swift */,
 			);
 			path = Features;
@@ -184,8 +207,25 @@
 				551D04692A266355003B0CF9 /* Book.swift */,
 				551D046B2A266368003B0CF9 /* Chapter.swift */,
 				551D046D2A266376003B0CF9 /* Verse.swift */,
+				551D046F2A2663B8003B0CF9 /* Testament.swift */,
+				551D04712A2663DB003B0CF9 /* Version.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		55D44F1E2A273D9C004A7AE5 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
+		55D44F292A278FCE004A7AE5 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				55D44F2A2A278FF7004A7AE5 /* Code+Utils.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -320,10 +360,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				551D04682A2662E1003B0CF9 /* TivBibleData.swift in Sources */,
-				551D043B2A26614B003B0CF9 /* Persistence.swift in Sources */,
+				551D04702A2663B8003B0CF9 /* Testament.swift in Sources */,
+				55D44F2B2A278FF7004A7AE5 /* Code+Utils.swift in Sources */,
+				551D043B2A26614B003B0CF9 /* PersistentStore.swift in Sources */,
 				551D046A2A266355003B0CF9 /* Book.swift in Sources */,
+				55D44F202A273E81004A7AE5 /* BooksDataStore.swift in Sources */,
 				551D046E2A266376003B0CF9 /* Verse.swift in Sources */,
 				551D04342A26614A003B0CF9 /* ContentView.swift in Sources */,
+				55D44F282A276C45004A7AE5 /* NSManagedObject+Extensions.swift in Sources */,
+				55D44F222A27507D004A7AE5 /* DataStoreType.swift in Sources */,
+				55D44F242A2752A5004A7AE5 /* NSManagedObjectContext+Extensions.swift in Sources */,
+				55D44F262A276946004A7AE5 /* NSFetchedResultsController+Extensions.swift in Sources */,
+				551D04722A2663DB003B0CF9 /* Version.swift in Sources */,
 				551D043E2A26614B003B0CF9 /* TivBible.xcdatamodeld in Sources */,
 				551D04322A26614A003B0CF9 /* TivBibleApp.swift in Sources */,
 				551D046C2A266368003B0CF9 /* Chapter.swift in Sources */,
@@ -413,7 +461,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -467,7 +515,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
