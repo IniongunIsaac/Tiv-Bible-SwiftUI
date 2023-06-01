@@ -23,6 +23,9 @@
 		551D046E2A266376003B0CF9 /* Verse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551D046D2A266376003B0CF9 /* Verse.swift */; };
 		551D04702A2663B8003B0CF9 /* Testament.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551D046F2A2663B8003B0CF9 /* Testament.swift */; };
 		551D04722A2663DB003B0CF9 /* Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551D04712A2663DB003B0CF9 /* Version.swift */; };
+		55D25DEA2A28BAC20056A14E /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D25DE92A28BAC20056A14E /* SplashViewModel.swift */; };
+		55D25DEC2A28BCD90056A14E /* Data+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D25DEB2A28BCD90056A14E /* Data+Extensions.swift */; };
+		55D25DEE2A28BEB10056A14E /* TivBibleError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D25DED2A28BEB10056A14E /* TivBibleError.swift */; };
 		55D44F202A273E81004A7AE5 /* BooksDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D44F1F2A273E81004A7AE5 /* BooksDataStore.swift */; };
 		55D44F222A27507D004A7AE5 /* DataStoreType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D44F212A27507D004A7AE5 /* DataStoreType.swift */; };
 		55D44F242A2752A5004A7AE5 /* NSManagedObjectContext+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D44F232A2752A5004A7AE5 /* NSManagedObjectContext+Extensions.swift */; };
@@ -70,6 +73,9 @@
 		551D046D2A266376003B0CF9 /* Verse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Verse.swift; sourceTree = "<group>"; };
 		551D046F2A2663B8003B0CF9 /* Testament.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Testament.swift; sourceTree = "<group>"; };
 		551D04712A2663DB003B0CF9 /* Version.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Version.swift; sourceTree = "<group>"; };
+		55D25DE92A28BAC20056A14E /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
+		55D25DEB2A28BCD90056A14E /* Data+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extensions.swift"; sourceTree = "<group>"; };
+		55D25DED2A28BEB10056A14E /* TivBibleError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TivBibleError.swift; sourceTree = "<group>"; };
 		55D44F1F2A273E81004A7AE5 /* BooksDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksDataStore.swift; sourceTree = "<group>"; };
 		55D44F212A27507D004A7AE5 /* DataStoreType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStoreType.swift; sourceTree = "<group>"; };
 		55D44F232A2752A5004A7AE5 /* NSManagedObjectContext+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+Extensions.swift"; sourceTree = "<group>"; };
@@ -222,6 +228,7 @@
 		55D44F1E2A273D9C004A7AE5 /* Splash */ = {
 			isa = PBXGroup;
 			children = (
+				55D25DE92A28BAC20056A14E /* SplashViewModel.swift */,
 			);
 			path = Splash;
 			sourceTree = "<group>";
@@ -230,6 +237,8 @@
 			isa = PBXGroup;
 			children = (
 				55D44F2A2A278FF7004A7AE5 /* Code+Utils.swift */,
+				55D25DEB2A28BCD90056A14E /* Data+Extensions.swift */,
+				55D25DED2A28BEB10056A14E /* TivBibleError.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -365,7 +374,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55D25DEE2A28BEB10056A14E /* TivBibleError.swift in Sources */,
 				551D04682A2662E1003B0CF9 /* TivBibleData.swift in Sources */,
+				55D25DEA2A28BAC20056A14E /* SplashViewModel.swift in Sources */,
 				551D04702A2663B8003B0CF9 /* Testament.swift in Sources */,
 				55D44F2B2A278FF7004A7AE5 /* Code+Utils.swift in Sources */,
 				551D043B2A26614B003B0CF9 /* PersistentStore.swift in Sources */,
@@ -373,6 +384,7 @@
 				55D44F202A273E81004A7AE5 /* BooksDataStore.swift in Sources */,
 				55D44F2D2A27A53A004A7AE5 /* ChaptersDataStore.swift in Sources */,
 				551D046E2A266376003B0CF9 /* Verse.swift in Sources */,
+				55D25DEC2A28BCD90056A14E /* Data+Extensions.swift in Sources */,
 				551D04342A26614A003B0CF9 /* ContentView.swift in Sources */,
 				55D44F282A276C45004A7AE5 /* NSManagedObject+Extensions.swift in Sources */,
 				55D44F222A27507D004A7AE5 /* DataStoreType.swift in Sources */,

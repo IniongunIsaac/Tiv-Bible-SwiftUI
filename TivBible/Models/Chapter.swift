@@ -8,7 +8,7 @@
 import Foundation
 import CoreData
 
-struct Chapter {
+struct Chapter: Identifiable {
     var id: UUID = UUID()
     var number: Int
     var verses: [Verse] = []
@@ -26,7 +26,17 @@ extension Chapter {
     }
     
     func chapterMO(context: NSManagedObjectContext) -> ChapterMO? {
-        try? context.fetchByID(objectType: ChapterMO.self, id: id)
+        try? context.fetchByID(objectType: ChapterMO.self, id: id) ?? newChapterMO(context: context)
+    }
+    
+    func newChapterMO(context: NSManagedObjectContext) -> ChapterMO {
+        let chapterMO = ChapterMO(context: context)
+        chapterMO.id = id
+        chapterMO.number = number.int16
+        chapterMO.book = book?.bookMO(context: context)
+        let verseMOs = verses.compactMap { $0.verseMO(context: context) }
+        chapterMO.verses = NSSet(array: verseMOs)
+        return chapterMO
     }
 }
 

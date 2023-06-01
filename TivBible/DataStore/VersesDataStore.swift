@@ -81,13 +81,13 @@ final class VersesDataStore: NSObject, ObservableObject {
         let batchInsertRequest = NSBatchInsertRequest(entity: VerseMO.entity()) { (managedObject: NSManagedObject) -> Bool in
             guard index < total else { return true }
             
-            if var verseMO = managedObject as? VerseMO {
+            if let verseMO = managedObject as? VerseMO {
                 with(verses[index]) {
                     verseMO.id = $0.id
                     verseMO.number = $0.number.int16
                     verseMO.title = $0.title
                     verseMO.text = $0.text
-                    verseMO.chapter = $0.chapter?.chapterMO(context: self.context)
+                    //verseMO.chapter = $0.chapter?.chapterMO(context: self.context)
                 }
             }
             

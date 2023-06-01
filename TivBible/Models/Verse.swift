@@ -8,7 +8,7 @@
 import Foundation
 import CoreData
 
-struct Verse {
+struct Verse: Identifiable {
     var id: UUID = UUID()
     var title: String
     var text: String
@@ -26,7 +26,21 @@ extension Verse {
     }
     
     func verseMO(context: NSManagedObjectContext) -> VerseMO? {
-        try? context.fetchByID(objectType: VerseMO.self, id: id)
+        try? context.fetchByID(objectType: VerseMO.self, id: id) ?? newVerseMO(context: context)
+    }
+    
+    func newVerseMO(context: NSManagedObjectContext) -> VerseMO {
+        let verseMO = VerseMO(context: context)
+        verseMO.id = id
+        verseMO.number = number.int16
+        verseMO.title = title
+        verseMO.text = text
+        
+        if let chapterId = chapter?.id {
+            verseMO.chapter = try? context.fetchByID(objectType: ChapterMO.self, id: chapterId)
+        }
+        
+        return verseMO
     }
 }
 

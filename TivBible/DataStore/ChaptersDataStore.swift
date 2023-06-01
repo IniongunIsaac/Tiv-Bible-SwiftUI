@@ -81,12 +81,13 @@ final class ChaptersDataStore: NSObject, ObservableObject {
         let batchInsertRequest = NSBatchInsertRequest(entity: ChapterMO.entity()) { (managedObject: NSManagedObject) -> Bool in
             guard index < total else { return true }
             
-            if var chapterMO = managedObject as? ChapterMO {
+            if let chapterMO = managedObject as? ChapterMO {
                 with(chapters[index]) {
                     chapterMO.id = $0.id
                     chapterMO.number = $0.number.int16
-                    chapterMO.book = $0.book?.bookMO(context: self.context)
-                    chapterMO.verses = NSSet(array: $0.verses)
+                    /*chapterMO.book = $0.book?.bookMO(context: self.context)
+                    let verseMOs = $0.verses.compactMap { $0.verseMO(context: self.context) }
+                    chapterMO.verses = NSSet(array: verseMOs)*/
                 }
             }
             
