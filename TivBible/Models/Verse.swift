@@ -21,8 +21,12 @@ extension Verse {
         id = verseMO.id ?? UUID()
         title = verseMO.title ?? ""
         text = verseMO.text ?? ""
-        number = Int(verseMO.number)
+        number = verseMO.number.int
         chapter = verseMO.chapter?.chapter
+    }
+    
+    func verseMO(context: NSManagedObjectContext) -> VerseMO? {
+        try? context.fetchByID(objectType: VerseMO.self, id: id)
     }
 }
 

@@ -18,11 +18,15 @@ struct Chapter {
 extension Chapter {
     init(chapterMO: ChapterMO) {
         id = chapterMO.id ?? UUID()
-        number = Int(chapterMO.number)
+        number = chapterMO.number.int
         book = chapterMO.book?.book
         if let verseMOs = chapterMO.verses as? Set<VerseMO> {
             verses = verseMOs.map(Verse.init)
         }
+    }
+    
+    func chapterMO(context: NSManagedObjectContext) -> ChapterMO? {
+        try? context.fetchByID(objectType: ChapterMO.self, id: id)
     }
 }
 

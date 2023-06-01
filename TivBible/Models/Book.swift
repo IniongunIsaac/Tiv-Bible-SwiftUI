@@ -28,6 +28,10 @@ extension Book {
             chapters = chapterMOs.map(Chapter.init)
         }
     }
+    
+    func bookMO(context: NSManagedObjectContext) -> BookMO? {
+        try? context.fetchByID(objectType: BookMO.self, id: id)
+    }
 }
 
 extension BookMO {

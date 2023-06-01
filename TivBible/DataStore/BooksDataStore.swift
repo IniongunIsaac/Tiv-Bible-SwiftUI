@@ -32,9 +32,9 @@ final class BooksDataStore: NSObject, ObservableObject {
             self.container = persistentStore.container
         }
         
-        let booksFR: NSFetchRequest<BookMO> = BookMO.fetchRequest()
-        booksFR.sortDescriptors = []
-        booksFRC = NSFetchedResultsController(fetchRequest: booksFR,
+        let bookFR: NSFetchRequest<BookMO> = BookMO.fetchRequest()
+        bookFR.sortDescriptors = []
+        booksFRC = NSFetchedResultsController(fetchRequest: bookFR,
                                               managedObjectContext: context,
                                               sectionNameKeyPath: nil,
                                               cacheName: nil)
