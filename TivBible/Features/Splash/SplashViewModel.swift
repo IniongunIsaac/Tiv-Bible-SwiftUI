@@ -7,6 +7,7 @@
 
 import Foundation
 import Combine
+import SwiftUI
 
 @MainActor
 final class SplashViewModel: ObservableObject {
@@ -16,6 +17,8 @@ final class SplashViewModel: ObservableObject {
     @Published private var versesDataStore: VersesDataStore
     
     @Published var dbInitializationInProgress: Bool = false
+    @Published var preferenceStore = PreferenceStore()
+    
     var booksDataStoreCancellable: AnyCancellable? = nil
     var chaptersDataStoreCancellable: AnyCancellable? = nil
     var versesDataStoreCancellable: AnyCancellable? = nil
@@ -41,8 +44,11 @@ final class SplashViewModel: ObservableObject {
         }
     }
     
-    func initializeDB() async throws {
+    func initializeDB() async {
+        guard !preferenceStore.hasSetupDB else { return }
+        
         dbInitializationInProgress = true
+        
         var bibleData = [TivBibleData]()
         
         do {

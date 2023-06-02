@@ -25,6 +25,11 @@
 		551D04722A2663DB003B0CF9 /* Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551D04712A2663DB003B0CF9 /* Version.swift */; };
 		5552B7862A29F04600506141 /* AppStorageKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5552B7852A29F04600506141 /* AppStorageKey.swift */; };
 		5552B7882A29F07C00506141 /* AppStorage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5552B7872A29F07C00506141 /* AppStorage+Extensions.swift */; };
+		5552B78A2A2A217000506141 /* PreferenceStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5552B7892A2A217000506141 /* PreferenceStore.swift */; };
+		5552B78C2A2A238E00506141 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5552B78B2A2A238E00506141 /* SplashView.swift */; };
+		5552B7B72A2A476E00506141 /* DependencyType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5552B7B62A2A476E00506141 /* DependencyType.swift */; };
+		5552B7B92A2A47F700506141 /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5552B7B82A2A47F700506141 /* DependencyContainer.swift */; };
+		5552B7BB2A2A487C00506141 /* DependencyProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5552B7BA2A2A487C00506141 /* DependencyProvider.swift */; };
 		55D25DEA2A28BAC20056A14E /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D25DE92A28BAC20056A14E /* SplashViewModel.swift */; };
 		55D25DEC2A28BCD90056A14E /* Data+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D25DEB2A28BCD90056A14E /* Data+Extensions.swift */; };
 		55D25DEE2A28BEB10056A14E /* TivBibleError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D25DED2A28BEB10056A14E /* TivBibleError.swift */; };
@@ -77,6 +82,11 @@
 		551D04712A2663DB003B0CF9 /* Version.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Version.swift; sourceTree = "<group>"; };
 		5552B7852A29F04600506141 /* AppStorageKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStorageKey.swift; sourceTree = "<group>"; };
 		5552B7872A29F07C00506141 /* AppStorage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppStorage+Extensions.swift"; sourceTree = "<group>"; };
+		5552B7892A2A217000506141 /* PreferenceStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceStore.swift; sourceTree = "<group>"; };
+		5552B78B2A2A238E00506141 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		5552B7B62A2A476E00506141 /* DependencyType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyType.swift; sourceTree = "<group>"; };
+		5552B7B82A2A47F700506141 /* DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
+		5552B7BA2A2A487C00506141 /* DependencyProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyProvider.swift; sourceTree = "<group>"; };
 		55D25DE92A28BAC20056A14E /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
 		55D25DEB2A28BCD90056A14E /* Data+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extensions.swift"; sourceTree = "<group>"; };
 		55D25DED2A28BEB10056A14E /* TivBibleError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TivBibleError.swift; sourceTree = "<group>"; };
@@ -138,9 +148,10 @@
 		551D04302A26614A003B0CF9 /* TivBible */ = {
 			isa = PBXGroup;
 			children = (
+				551D04622A2661C0003B0CF9 /* App */,
+				5552B7B52A2A475700506141 /* DI */,
 				5552B7842A29F02A00506141 /* AppStorage */,
 				55D44F292A278FCE004A7AE5 /* Extensions */,
-				551D04622A2661C0003B0CF9 /* App */,
 				551D04612A2661B8003B0CF9 /* Resources */,
 				551D04632A2661CD003B0CF9 /* Features */,
 				551D04662A26624A003B0CF9 /* Models */,
@@ -235,14 +246,26 @@
 			children = (
 				5552B7852A29F04600506141 /* AppStorageKey.swift */,
 				5552B7872A29F07C00506141 /* AppStorage+Extensions.swift */,
+				5552B7892A2A217000506141 /* PreferenceStore.swift */,
 			);
 			path = AppStorage;
+			sourceTree = "<group>";
+		};
+		5552B7B52A2A475700506141 /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				5552B7B62A2A476E00506141 /* DependencyType.swift */,
+				5552B7B82A2A47F700506141 /* DependencyContainer.swift */,
+				5552B7BA2A2A487C00506141 /* DependencyProvider.swift */,
+			);
+			path = DI;
 			sourceTree = "<group>";
 		};
 		55D44F1E2A273D9C004A7AE5 /* Splash */ = {
 			isa = PBXGroup;
 			children = (
 				55D25DE92A28BAC20056A14E /* SplashViewModel.swift */,
+				5552B78B2A2A238E00506141 /* SplashView.swift */,
 			);
 			path = Splash;
 			sourceTree = "<group>";
@@ -390,6 +413,7 @@
 			files = (
 				55D25DEE2A28BEB10056A14E /* TivBibleError.swift in Sources */,
 				551D04682A2662E1003B0CF9 /* TivBibleData.swift in Sources */,
+				5552B78C2A2A238E00506141 /* SplashView.swift in Sources */,
 				55D25DEA2A28BAC20056A14E /* SplashViewModel.swift in Sources */,
 				551D04702A2663B8003B0CF9 /* Testament.swift in Sources */,
 				55D44F2B2A278FF7004A7AE5 /* Code+Utils.swift in Sources */,
@@ -403,11 +427,15 @@
 				551D04342A26614A003B0CF9 /* ContentView.swift in Sources */,
 				55D44F282A276C45004A7AE5 /* NSManagedObject+Extensions.swift in Sources */,
 				55D44F222A27507D004A7AE5 /* DataStoreType.swift in Sources */,
+				5552B7B92A2A47F700506141 /* DependencyContainer.swift in Sources */,
 				55D44F242A2752A5004A7AE5 /* NSManagedObjectContext+Extensions.swift in Sources */,
 				55D44F262A276946004A7AE5 /* NSFetchedResultsController+Extensions.swift in Sources */,
 				55D44F2F2A27A55A004A7AE5 /* VersesDataStore.swift in Sources */,
 				5552B7862A29F04600506141 /* AppStorageKey.swift in Sources */,
+				5552B7BB2A2A487C00506141 /* DependencyProvider.swift in Sources */,
+				5552B7B72A2A476E00506141 /* DependencyType.swift in Sources */,
 				551D04722A2663DB003B0CF9 /* Version.swift in Sources */,
+				5552B78A2A2A217000506141 /* PreferenceStore.swift in Sources */,
 				551D043E2A26614B003B0CF9 /* TivBible.xcdatamodeld in Sources */,
 				551D04322A26614A003B0CF9 /* TivBibleApp.swift in Sources */,
 				551D046C2A266368003B0CF9 /* Chapter.swift in Sources */,
