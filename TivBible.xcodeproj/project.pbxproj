@@ -23,6 +23,8 @@
 		551D046E2A266376003B0CF9 /* Verse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551D046D2A266376003B0CF9 /* Verse.swift */; };
 		551D04702A2663B8003B0CF9 /* Testament.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551D046F2A2663B8003B0CF9 /* Testament.swift */; };
 		551D04722A2663DB003B0CF9 /* Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551D04712A2663DB003B0CF9 /* Version.swift */; };
+		5552B7862A29F04600506141 /* AppStorageKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5552B7852A29F04600506141 /* AppStorageKey.swift */; };
+		5552B7882A29F07C00506141 /* AppStorage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5552B7872A29F07C00506141 /* AppStorage+Extensions.swift */; };
 		55D25DEA2A28BAC20056A14E /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D25DE92A28BAC20056A14E /* SplashViewModel.swift */; };
 		55D25DEC2A28BCD90056A14E /* Data+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D25DEB2A28BCD90056A14E /* Data+Extensions.swift */; };
 		55D25DEE2A28BEB10056A14E /* TivBibleError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D25DED2A28BEB10056A14E /* TivBibleError.swift */; };
@@ -73,6 +75,8 @@
 		551D046D2A266376003B0CF9 /* Verse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Verse.swift; sourceTree = "<group>"; };
 		551D046F2A2663B8003B0CF9 /* Testament.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Testament.swift; sourceTree = "<group>"; };
 		551D04712A2663DB003B0CF9 /* Version.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Version.swift; sourceTree = "<group>"; };
+		5552B7852A29F04600506141 /* AppStorageKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStorageKey.swift; sourceTree = "<group>"; };
+		5552B7872A29F07C00506141 /* AppStorage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppStorage+Extensions.swift"; sourceTree = "<group>"; };
 		55D25DE92A28BAC20056A14E /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
 		55D25DEB2A28BCD90056A14E /* Data+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extensions.swift"; sourceTree = "<group>"; };
 		55D25DED2A28BEB10056A14E /* TivBibleError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TivBibleError.swift; sourceTree = "<group>"; };
@@ -134,6 +138,7 @@
 		551D04302A26614A003B0CF9 /* TivBible */ = {
 			isa = PBXGroup;
 			children = (
+				5552B7842A29F02A00506141 /* AppStorage */,
 				55D44F292A278FCE004A7AE5 /* Extensions */,
 				551D04622A2661C0003B0CF9 /* App */,
 				551D04612A2661B8003B0CF9 /* Resources */,
@@ -223,6 +228,15 @@
 				551D04712A2663DB003B0CF9 /* Version.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		5552B7842A29F02A00506141 /* AppStorage */ = {
+			isa = PBXGroup;
+			children = (
+				5552B7852A29F04600506141 /* AppStorageKey.swift */,
+				5552B7872A29F07C00506141 /* AppStorage+Extensions.swift */,
+			);
+			path = AppStorage;
 			sourceTree = "<group>";
 		};
 		55D44F1E2A273D9C004A7AE5 /* Splash */ = {
@@ -383,6 +397,7 @@
 				551D046A2A266355003B0CF9 /* Book.swift in Sources */,
 				55D44F202A273E81004A7AE5 /* BooksDataStore.swift in Sources */,
 				55D44F2D2A27A53A004A7AE5 /* ChaptersDataStore.swift in Sources */,
+				5552B7882A29F07C00506141 /* AppStorage+Extensions.swift in Sources */,
 				551D046E2A266376003B0CF9 /* Verse.swift in Sources */,
 				55D25DEC2A28BCD90056A14E /* Data+Extensions.swift in Sources */,
 				551D04342A26614A003B0CF9 /* ContentView.swift in Sources */,
@@ -391,6 +406,7 @@
 				55D44F242A2752A5004A7AE5 /* NSManagedObjectContext+Extensions.swift in Sources */,
 				55D44F262A276946004A7AE5 /* NSFetchedResultsController+Extensions.swift in Sources */,
 				55D44F2F2A27A55A004A7AE5 /* VersesDataStore.swift in Sources */,
+				5552B7862A29F04600506141 /* AppStorageKey.swift in Sources */,
 				551D04722A2663DB003B0CF9 /* Version.swift in Sources */,
 				551D043E2A26614B003B0CF9 /* TivBible.xcdatamodeld in Sources */,
 				551D04322A26614A003B0CF9 /* TivBibleApp.swift in Sources */,

@@ -6,15 +6,19 @@
 //
 
 import Foundation
+import Combine
 
 @MainActor
 final class SplashViewModel: ObservableObject {
     
-    private let booksDataStore: BooksDataStore
-    private let chaptersDataStore: ChaptersDataStore
-    private let versesDataStore: VersesDataStore
+    @Published private var booksDataStore: BooksDataStore
+    @Published private var chaptersDataStore: ChaptersDataStore
+    @Published private var versesDataStore: VersesDataStore
     
     @Published var dbInitializationInProgress: Bool = false
+    var booksDataStoreCancellable: AnyCancellable? = nil
+    var chaptersDataStoreCancellable: AnyCancellable? = nil
+    var versesDataStoreCancellable: AnyCancellable? = nil
     
     init(booksDataStore: BooksDataStore = .shared,
          chaptersDataStore: ChaptersDataStore = .shared,
@@ -23,6 +27,18 @@ final class SplashViewModel: ObservableObject {
         self.booksDataStore = booksDataStore
         self.chaptersDataStore = chaptersDataStore
         self.versesDataStore = versesDataStore
+        
+        booksDataStoreCancellable = booksDataStore.objectWillChange.sink { [weak self] (_) in
+            self?.objectWillChange.send()
+        }
+        
+        chaptersDataStoreCancellable = chaptersDataStore.objectWillChange.sink { [weak self] (_) in
+            self?.objectWillChange.send()
+        }
+        
+        versesDataStoreCancellable = versesDataStore.objectWillChange.sink { [weak self] (_) in
+            self?.objectWillChange.send()
+        }
     }
     
     func initializeDB() async throws {
@@ -64,27 +80,23 @@ final class SplashViewModel: ObservableObject {
                     
                     let bookChapterVerses = bookOccurrences.filter { $0.chapter == chapter.chapter }.distinctBy { $0.verse }
                     
-                    //create and add chapter to chapters list
-                    var newChapter = Chapter(number: chapter.chapter, book: newBook)
+                    var newChapter = Chapter(number: chapter.chapter, bookID: newBook.id)
                     newChapters.append(newChapter)
                     
-                    //create verses
                     let verses = bookChapterVerses.map {
                         Verse(title: $0.title.components(separatedBy: .whitespacesAndNewlines).joined(separator: " "),
                               text: $0.text.components(separatedBy: .whitespacesAndNewlines).joined(separator: " "),
                               number: $0.verse,
-                              chapter: newChapter)
+                              chapterID: newChapter.id)
                     }
                     
-                    //attach verses to chapter
-                    newChapter.verses = verses
+                    newChapter.verseIDs = verses.map { $0.id }
                     
-                    //add verses to verses list
                     newVerses.append(contentsOf: verses)
                     
                 }
                 
-                newBook.chapters = newChapters
+                newBook.chapterIDs = newChapters.map { $0.id }
                 
                 books.append(newBook)
                 allChapters.append(contentsOf: newChapters)
@@ -96,6 +108,7 @@ final class SplashViewModel: ObservableObject {
                 try await booksDataStore.insertBooks(books)
                 try await chaptersDataStore.insertChapters(allChapters)
                 try await versesDataStore.insertVerses(allVerses)
+                try booksDataStore.createRelationships(chapters: allChapters, verses: allVerses)
             } catch {
                 print("unable to perform batch insertions \(error)")
             }

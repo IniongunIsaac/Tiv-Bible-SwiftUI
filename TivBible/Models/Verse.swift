@@ -13,7 +13,8 @@ struct Verse: Identifiable {
     var title: String
     var text: String
     var number: Int
-    var chapter: Chapter?
+    var chapterID: UUID
+    //var chapter: Chapter?
 }
 
 extension Verse {
@@ -22,7 +23,8 @@ extension Verse {
         title = verseMO.title ?? ""
         text = verseMO.text ?? ""
         number = verseMO.number.int
-        chapter = verseMO.chapter?.chapter
+        chapterID = verseMO.chapter?.id ?? UUID()
+        //chapter = verseMO.chapter?.chapter
     }
     
     func verseMO(context: NSManagedObjectContext) -> VerseMO? {
@@ -35,10 +37,11 @@ extension Verse {
         verseMO.number = number.int16
         verseMO.title = title
         verseMO.text = text
+        verseMO.chapter = try? context.fetchByID(objectType: ChapterMO.self, id: chapterID)
         
-        if let chapterId = chapter?.id {
+        /*if let chapterId = chapter?.id {
             verseMO.chapter = try? context.fetchByID(objectType: ChapterMO.self, id: chapterId)
-        }
+        }*/
         
         return verseMO
     }

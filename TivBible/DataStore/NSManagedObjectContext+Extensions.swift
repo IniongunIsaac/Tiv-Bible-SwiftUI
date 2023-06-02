@@ -30,4 +30,15 @@ extension NSManagedObjectContext {
         
         return objects?.first
     }
+    
+    func objects<T: NSManagedObject>(for objectType: T.Type,
+                                     predicate: NSPredicate? = nil,
+                                     sortDescriptors: [NSSortDescriptor]? = nil
+    ) throws -> [T] {
+        let request = objectType.fetchRequest()
+        request.predicate = predicate
+        request.sortDescriptors = sortDescriptors
+        
+        return try fetch(request) as? [T] ?? []
+    }
 }

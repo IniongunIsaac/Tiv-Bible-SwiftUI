@@ -14,7 +14,8 @@ struct Book: Identifiable {
     var order: Int
     var testament: Int
     var version: Int
-    var chapters: [Chapter] = []
+    var chapterIDs = [UUID]()
+    //var chapters: [Chapter] = []
 }
 
 extension Book {
@@ -25,7 +26,8 @@ extension Book {
         testament = bookMO.testament.int
         version = bookMO.version.int
         if let chapterMOs = bookMO.chapters as? Set<ChapterMO> {
-            chapters = chapterMOs.map(Chapter.init)
+            //chapters = chapterMOs.map(Chapter.init)
+            chapterIDs = chapterMOs.compactMap { $0.id }
         }
     }
     
@@ -40,7 +42,7 @@ extension Book {
         bookMO.order = order.int16
         bookMO.testament = testament.int16
         bookMO.version = version.int16
-        let chapterMOs = chapters.compactMap { $0.chapterMO(context: context) }
+        let chapterMOs = chapterIDs.compactMap { try? context.fetchByID(objectType: ChapterMO.self, id: $0) } //chapters.compactMap { $0.chapterMO(context: context) }
         bookMO.chapters = NSSet(array: chapterMOs)
         
         return bookMO

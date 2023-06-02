@@ -11,18 +11,24 @@ import CoreData
 struct Chapter: Identifiable {
     var id: UUID = UUID()
     var number: Int
-    var verses: [Verse] = []
-    var book: Book?
+    var bookID: UUID
+    var verseIDs = [UUID]()
+    /*var verses: [Verse] = []
+    var book: Book?*/
 }
 
 extension Chapter {
     init(chapterMO: ChapterMO) {
         id = chapterMO.id ?? UUID()
         number = chapterMO.number.int
-        book = chapterMO.book?.book
+        bookID = chapterMO.id ?? UUID()
+        if let verseMOs = chapterMO.verses as? Set<VerseMO> {
+            verseIDs = verseMOs.compactMap { $0.id }
+        }
+        /*book = chapterMO.book?.book
         if let verseMOs = chapterMO.verses as? Set<VerseMO> {
             verses = verseMOs.map(Verse.init)
-        }
+        }*/
     }
     
     func chapterMO(context: NSManagedObjectContext) -> ChapterMO? {
@@ -33,9 +39,14 @@ extension Chapter {
         let chapterMO = ChapterMO(context: context)
         chapterMO.id = id
         chapterMO.number = number.int16
-        chapterMO.book = book?.bookMO(context: context)
-        let verseMOs = verses.compactMap { $0.verseMO(context: context) }
+        chapterMO.book = try? context.fetchByID(objectType: BookMO.self, id: bookID)
+        
+        let verseMOs = verseIDs.compactMap { try? context.fetchByID(objectType: VerseMO.self, id: $0) }
         chapterMO.verses = NSSet(array: verseMOs)
+        
+        /*chapterMO.book = book?.bookMO(context: context)
+        let verseMOs = verses.compactMap { $0.verseMO(context: context) }
+        chapterMO.verses = NSSet(array: verseMOs)*/
         return chapterMO
     }
 }

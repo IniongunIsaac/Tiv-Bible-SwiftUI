@@ -100,6 +100,33 @@ final class BooksDataStore: NSObject, ObservableObject {
         
         return batchInsertRequest
     }
+    
+    func createRelationships(chapters: [Chapter], verses: [Verse]) throws {
+        let dbBooks = try context.objects(for: BookMO.self)
+        try dbBooks.forEach { dbBook in
+            guard let bookID = dbBook.id else { return }
+            
+            let currentBookChapterIDs = chapters.filter { $0.bookID == bookID }.map { $0.id }
+            
+            try currentBookChapterIDs.forEach { chapterID in
+                let chapterMO = try context.fetchByID(objectType: ChapterMO.self, id: chapterID)
+                chapterMO?.book = dbBook
+                
+                let currentChapterVerseIDs = verses.filter { $0.chapterID == chapterID }.map { $0.id }
+                
+                var chapterVerseMOs = [VerseMO]()
+                try currentChapterVerseIDs.forEach { verseID in
+                    if let verseMO = try context.fetchByID(objectType: VerseMO.self, id: verseID) {
+                        verseMO.chapter = chapterMO
+                        chapterVerseMOs.append(verseMO)
+                    }
+                }
+                
+                chapterMO?.verses = NSSet(array: chapterVerseMOs)
+            }
+        }
+        context.saveChanges()
+    }
 }
 
 extension BooksDataStore: NSFetchedResultsControllerDelegate {
