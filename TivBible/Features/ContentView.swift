@@ -9,9 +9,14 @@ import SwiftUI
 import CoreData
 
 struct ContentView: View {
+    
+    @StateObject private var viewModel = SplashViewModel()
 
     var body: some View {
-        Text("Take this")
+        Text("Next up!!!")
+            .onAppear {
+                viewModel.printBooks()
+            }
     }
 }
 

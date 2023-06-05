@@ -23,6 +23,13 @@
 		551D046E2A266376003B0CF9 /* Verse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551D046D2A266376003B0CF9 /* Verse.swift */; };
 		551D04702A2663B8003B0CF9 /* Testament.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551D046F2A2663B8003B0CF9 /* Testament.swift */; };
 		551D04722A2663DB003B0CF9 /* Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551D04712A2663DB003B0CF9 /* Version.swift */; };
+		5542E7E22A2BABB900CDD4CD /* View+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5542E7E12A2BABB900CDD4CD /* View+.swift */; };
+		5542E7E42A2BAD9300CDD4CD /* Color+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5542E7E32A2BAD9300CDD4CD /* Color+.swift */; };
+		5542E7EB2A2BAFBE00CDD4CD /* GentiumPlus-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5542E7E72A2BAFBD00CDD4CD /* GentiumPlus-Bold.ttf */; };
+		5542E7EC2A2BAFBE00CDD4CD /* GentiumPlus-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5542E7E82A2BAFBD00CDD4CD /* GentiumPlus-Italic.ttf */; };
+		5542E7ED2A2BAFBE00CDD4CD /* GentiumPlus-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5542E7E92A2BAFBE00CDD4CD /* GentiumPlus-Regular.ttf */; };
+		5542E7EE2A2BAFBE00CDD4CD /* GentiumPlus-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5542E7EA2A2BAFBE00CDD4CD /* GentiumPlus-BoldItalic.ttf */; };
+		5542E7F12A2BB13000CDD4CD /* Font+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5542E7F02A2BB13000CDD4CD /* Font+.swift */; };
 		5552B7862A29F04600506141 /* AppStorageKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5552B7852A29F04600506141 /* AppStorageKey.swift */; };
 		5552B7882A29F07C00506141 /* AppStorage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5552B7872A29F07C00506141 /* AppStorage+Extensions.swift */; };
 		5552B78A2A2A217000506141 /* PreferenceStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5552B7892A2A217000506141 /* PreferenceStore.swift */; };
@@ -31,14 +38,14 @@
 		5552B7B92A2A47F700506141 /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5552B7B82A2A47F700506141 /* DependencyContainer.swift */; };
 		5552B7BB2A2A487C00506141 /* DependencyProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5552B7BA2A2A487C00506141 /* DependencyProvider.swift */; };
 		55D25DEA2A28BAC20056A14E /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D25DE92A28BAC20056A14E /* SplashViewModel.swift */; };
-		55D25DEC2A28BCD90056A14E /* Data+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D25DEB2A28BCD90056A14E /* Data+Extensions.swift */; };
+		55D25DEC2A28BCD90056A14E /* Data+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D25DEB2A28BCD90056A14E /* Data+.swift */; };
 		55D25DEE2A28BEB10056A14E /* TivBibleError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D25DED2A28BEB10056A14E /* TivBibleError.swift */; };
 		55D44F202A273E81004A7AE5 /* BooksDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D44F1F2A273E81004A7AE5 /* BooksDataStore.swift */; };
 		55D44F222A27507D004A7AE5 /* DataStoreType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D44F212A27507D004A7AE5 /* DataStoreType.swift */; };
 		55D44F242A2752A5004A7AE5 /* NSManagedObjectContext+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D44F232A2752A5004A7AE5 /* NSManagedObjectContext+Extensions.swift */; };
 		55D44F262A276946004A7AE5 /* NSFetchedResultsController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D44F252A276946004A7AE5 /* NSFetchedResultsController+Extensions.swift */; };
 		55D44F282A276C45004A7AE5 /* NSManagedObject+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D44F272A276C45004A7AE5 /* NSManagedObject+Extensions.swift */; };
-		55D44F2B2A278FF7004A7AE5 /* Code+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D44F2A2A278FF7004A7AE5 /* Code+Utils.swift */; };
+		55D44F2B2A278FF7004A7AE5 /* Code+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D44F2A2A278FF7004A7AE5 /* Code+.swift */; };
 		55D44F2D2A27A53A004A7AE5 /* ChaptersDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D44F2C2A27A53A004A7AE5 /* ChaptersDataStore.swift */; };
 		55D44F2F2A27A55A004A7AE5 /* VersesDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D44F2E2A27A55A004A7AE5 /* VersesDataStore.swift */; };
 /* End PBXBuildFile section */
@@ -80,6 +87,14 @@
 		551D046D2A266376003B0CF9 /* Verse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Verse.swift; sourceTree = "<group>"; };
 		551D046F2A2663B8003B0CF9 /* Testament.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Testament.swift; sourceTree = "<group>"; };
 		551D04712A2663DB003B0CF9 /* Version.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Version.swift; sourceTree = "<group>"; };
+		5542E7E12A2BABB900CDD4CD /* View+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+.swift"; sourceTree = "<group>"; };
+		5542E7E32A2BAD9300CDD4CD /* Color+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+.swift"; sourceTree = "<group>"; };
+		5542E7E72A2BAFBD00CDD4CD /* GentiumPlus-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GentiumPlus-Bold.ttf"; sourceTree = "<group>"; };
+		5542E7E82A2BAFBD00CDD4CD /* GentiumPlus-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GentiumPlus-Italic.ttf"; sourceTree = "<group>"; };
+		5542E7E92A2BAFBE00CDD4CD /* GentiumPlus-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GentiumPlus-Regular.ttf"; sourceTree = "<group>"; };
+		5542E7EA2A2BAFBE00CDD4CD /* GentiumPlus-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GentiumPlus-BoldItalic.ttf"; sourceTree = "<group>"; };
+		5542E7EF2A2BAFE400CDD4CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		5542E7F02A2BB13000CDD4CD /* Font+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+.swift"; sourceTree = "<group>"; };
 		5552B7852A29F04600506141 /* AppStorageKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStorageKey.swift; sourceTree = "<group>"; };
 		5552B7872A29F07C00506141 /* AppStorage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppStorage+Extensions.swift"; sourceTree = "<group>"; };
 		5552B7892A2A217000506141 /* PreferenceStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceStore.swift; sourceTree = "<group>"; };
@@ -88,14 +103,14 @@
 		5552B7B82A2A47F700506141 /* DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
 		5552B7BA2A2A487C00506141 /* DependencyProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyProvider.swift; sourceTree = "<group>"; };
 		55D25DE92A28BAC20056A14E /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
-		55D25DEB2A28BCD90056A14E /* Data+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extensions.swift"; sourceTree = "<group>"; };
+		55D25DEB2A28BCD90056A14E /* Data+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+.swift"; sourceTree = "<group>"; };
 		55D25DED2A28BEB10056A14E /* TivBibleError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TivBibleError.swift; sourceTree = "<group>"; };
 		55D44F1F2A273E81004A7AE5 /* BooksDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksDataStore.swift; sourceTree = "<group>"; };
 		55D44F212A27507D004A7AE5 /* DataStoreType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStoreType.swift; sourceTree = "<group>"; };
 		55D44F232A2752A5004A7AE5 /* NSManagedObjectContext+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+Extensions.swift"; sourceTree = "<group>"; };
 		55D44F252A276946004A7AE5 /* NSFetchedResultsController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSFetchedResultsController+Extensions.swift"; sourceTree = "<group>"; };
 		55D44F272A276C45004A7AE5 /* NSManagedObject+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObject+Extensions.swift"; sourceTree = "<group>"; };
-		55D44F2A2A278FF7004A7AE5 /* Code+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Code+Utils.swift"; sourceTree = "<group>"; };
+		55D44F2A2A278FF7004A7AE5 /* Code+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Code+.swift"; sourceTree = "<group>"; };
 		55D44F2C2A27A53A004A7AE5 /* ChaptersDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChaptersDataStore.swift; sourceTree = "<group>"; };
 		55D44F2E2A27A55A004A7AE5 /* VersesDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersesDataStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -148,6 +163,7 @@
 		551D04302A26614A003B0CF9 /* TivBible */ = {
 			isa = PBXGroup;
 			children = (
+				5542E7EF2A2BAFE400CDD4CD /* Info.plist */,
 				551D04622A2661C0003B0CF9 /* App */,
 				5552B7B52A2A475700506141 /* DI */,
 				5552B7842A29F02A00506141 /* AppStorage */,
@@ -205,6 +221,7 @@
 		551D04612A2661B8003B0CF9 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				5542E7E52A2BAF9500CDD4CD /* Fonts */,
 				551D04642A2661FD003B0CF9 /* tivBibleData.json */,
 				551D04352A26614B003B0CF9 /* Assets.xcassets */,
 			);
@@ -241,6 +258,25 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		5542E7E52A2BAF9500CDD4CD /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				5542E7E62A2BAFAD00CDD4CD /* GentiumPlus */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		5542E7E62A2BAFAD00CDD4CD /* GentiumPlus */ = {
+			isa = PBXGroup;
+			children = (
+				5542E7E72A2BAFBD00CDD4CD /* GentiumPlus-Bold.ttf */,
+				5542E7EA2A2BAFBE00CDD4CD /* GentiumPlus-BoldItalic.ttf */,
+				5542E7E82A2BAFBD00CDD4CD /* GentiumPlus-Italic.ttf */,
+				5542E7E92A2BAFBE00CDD4CD /* GentiumPlus-Regular.ttf */,
+			);
+			path = GentiumPlus;
+			sourceTree = "<group>";
+		};
 		5552B7842A29F02A00506141 /* AppStorage */ = {
 			isa = PBXGroup;
 			children = (
@@ -273,9 +309,12 @@
 		55D44F292A278FCE004A7AE5 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				55D44F2A2A278FF7004A7AE5 /* Code+Utils.swift */,
-				55D25DEB2A28BCD90056A14E /* Data+Extensions.swift */,
+				55D44F2A2A278FF7004A7AE5 /* Code+.swift */,
+				55D25DEB2A28BCD90056A14E /* Data+.swift */,
 				55D25DED2A28BEB10056A14E /* TivBibleError.swift */,
+				5542E7E12A2BABB900CDD4CD /* View+.swift */,
+				5542E7E32A2BAD9300CDD4CD /* Color+.swift */,
+				5542E7F02A2BB13000CDD4CD /* Font+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -384,9 +423,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5542E7EE2A2BAFBE00CDD4CD /* GentiumPlus-BoldItalic.ttf in Resources */,
+				5542E7EC2A2BAFBE00CDD4CD /* GentiumPlus-Italic.ttf in Resources */,
+				5542E7ED2A2BAFBE00CDD4CD /* GentiumPlus-Regular.ttf in Resources */,
 				551D04392A26614B003B0CF9 /* Preview Assets.xcassets in Resources */,
 				551D04652A2661FD003B0CF9 /* tivBibleData.json in Resources */,
 				551D04362A26614B003B0CF9 /* Assets.xcassets in Resources */,
+				5542E7EB2A2BAFBE00CDD4CD /* GentiumPlus-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,24 +455,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				55D25DEE2A28BEB10056A14E /* TivBibleError.swift in Sources */,
+				5542E7E42A2BAD9300CDD4CD /* Color+.swift in Sources */,
+				5542E7F12A2BB13000CDD4CD /* Font+.swift in Sources */,
 				551D04682A2662E1003B0CF9 /* TivBibleData.swift in Sources */,
 				5552B78C2A2A238E00506141 /* SplashView.swift in Sources */,
 				55D25DEA2A28BAC20056A14E /* SplashViewModel.swift in Sources */,
 				551D04702A2663B8003B0CF9 /* Testament.swift in Sources */,
-				55D44F2B2A278FF7004A7AE5 /* Code+Utils.swift in Sources */,
+				55D44F2B2A278FF7004A7AE5 /* Code+.swift in Sources */,
 				551D043B2A26614B003B0CF9 /* PersistentStore.swift in Sources */,
 				551D046A2A266355003B0CF9 /* Book.swift in Sources */,
 				55D44F202A273E81004A7AE5 /* BooksDataStore.swift in Sources */,
 				55D44F2D2A27A53A004A7AE5 /* ChaptersDataStore.swift in Sources */,
 				5552B7882A29F07C00506141 /* AppStorage+Extensions.swift in Sources */,
 				551D046E2A266376003B0CF9 /* Verse.swift in Sources */,
-				55D25DEC2A28BCD90056A14E /* Data+Extensions.swift in Sources */,
+				55D25DEC2A28BCD90056A14E /* Data+.swift in Sources */,
 				551D04342A26614A003B0CF9 /* ContentView.swift in Sources */,
 				55D44F282A276C45004A7AE5 /* NSManagedObject+Extensions.swift in Sources */,
 				55D44F222A27507D004A7AE5 /* DataStoreType.swift in Sources */,
 				5552B7B92A2A47F700506141 /* DependencyContainer.swift in Sources */,
 				55D44F242A2752A5004A7AE5 /* NSManagedObjectContext+Extensions.swift in Sources */,
 				55D44F262A276946004A7AE5 /* NSFetchedResultsController+Extensions.swift in Sources */,
+				5542E7E22A2BABB900CDD4CD /* View+.swift in Sources */,
 				55D44F2F2A27A55A004A7AE5 /* VersesDataStore.swift in Sources */,
 				5552B7862A29F04600506141 /* AppStorageKey.swift in Sources */,
 				5552B7BB2A2A487C00506141 /* DependencyProvider.swift in Sources */,
@@ -600,6 +646,7 @@
 				DEVELOPMENT_TEAM = 3W6S8FM5ZF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TivBible/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -629,6 +676,7 @@
 				DEVELOPMENT_TEAM = 3W6S8FM5ZF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TivBible/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

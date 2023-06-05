@@ -17,7 +17,7 @@ final class SplashViewModel: ObservableObject {
     @Published private var versesDataStore: VersesDataStore
     
     @Published var dbInitializationInProgress: Bool = false
-    @Published var preferenceStore = PreferenceStore()
+    @Published private var preferenceStore = PreferenceStore()
     
     var booksDataStoreCancellable: AnyCancellable? = nil
     var chaptersDataStoreCancellable: AnyCancellable? = nil
@@ -44,10 +44,22 @@ final class SplashViewModel: ObservableObject {
         }
     }
     
+    func printBooks() {
+        print(booksDataStore.books.first?.chapterIDs)
+        print("chaptersDataStore.chapters: \(chaptersDataStore.chapters.count)")
+        print(chaptersDataStore.chapters.first?.verseIDs)
+        print("versesDataStore.verses.count: \(versesDataStore.verses.count)")
+        print(versesDataStore.verses.prefix(50))
+    }
+    
     func initializeDB() async {
-        guard !preferenceStore.hasSetupDB else { return }
+        guard !preferenceStore.hasSetupDB else {
+            print("we have setup DB")
+            return }
         
         dbInitializationInProgress = true
+        
+        print("setting up this DB")
         
         var bibleData = [TivBibleData]()
         
@@ -114,12 +126,14 @@ final class SplashViewModel: ObservableObject {
                 try await booksDataStore.insertBooks(books)
                 try await chaptersDataStore.insertChapters(allChapters)
                 try await versesDataStore.insertVerses(allVerses)
-                try booksDataStore.createRelationships(chapters: allChapters, verses: allVerses)
+                try await booksDataStore.createRelationships(chapters: allChapters, verses: allVerses)
+                preferenceStore.hasSetupDB = true
+                dbInitializationInProgress = false
+                print("we have setup our DB now")
             } catch {
-                print("unable to perform batch insertions \(error)")
+                dbInitializationInProgress = false
+                print("unable to perform batch insertions and/or create entity relationships \(error)")
             }
-            
-            dbInitializationInProgress = false
         }
     }
     

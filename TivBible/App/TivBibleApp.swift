@@ -10,13 +10,19 @@ import SwiftUI
 @main
 struct TivBibleApp: App {
     
+    @StateObject private var preferenceStore = PreferenceStore()
+    
     init() {
         setupDependencyContainer()
     }
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            if preferenceStore.hasSetupDB {
+                ContentView()
+            } else {
+                SplashView()
+            }
         }
     }
 }

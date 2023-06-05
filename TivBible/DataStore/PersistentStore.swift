@@ -21,6 +21,7 @@ struct PersistentStore {
         }
         
         container.viewContext.automaticallyMergesChangesFromParent = true
+        
         // To enable notifications for batch inserts?
         persistentStoreDescription?.setOption(true as NSNumber, forKey: NSPersistentStoreRemoteChangeNotificationPostOptionKey)
         

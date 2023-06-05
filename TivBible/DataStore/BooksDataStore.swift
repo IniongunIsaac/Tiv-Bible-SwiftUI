@@ -23,7 +23,7 @@ final class BooksDataStore: NSObject, ObservableObject {
     private init(type: DataStoreType = .normal) {
         switch type {
         case .normal:
-            let persistentStore = PersistentStore()
+            let persistentStore = PersistentStore.shared
             self.context = persistentStore.context
             self.container = persistentStore.container
         case .preview, .testing:
@@ -101,31 +101,37 @@ final class BooksDataStore: NSObject, ObservableObject {
         return batchInsertRequest
     }
     
-    func createRelationships(chapters: [Chapter], verses: [Verse]) throws {
-        let dbBooks = try context.objects(for: BookMO.self)
-        try dbBooks.forEach { dbBook in
-            guard let bookID = dbBook.id else { return }
-            
-            let currentBookChapterIDs = chapters.filter { $0.bookID == bookID }.map { $0.id }
-            
-            try currentBookChapterIDs.forEach { chapterID in
-                let chapterMO = try context.fetchByID(objectType: ChapterMO.self, id: chapterID)
-                chapterMO?.book = dbBook
+    func createRelationships(chapters: [Chapter], verses: [Verse]) async throws {
+        try await container.performBackgroundTask { context in
+            let dbBooks = try context.objects(for: BookMO.self)
+            try dbBooks.forEach { dbBook in
+                guard let bookID = dbBook.id else { return }
                 
-                let currentChapterVerseIDs = verses.filter { $0.chapterID == chapterID }.map { $0.id }
+                let currentBookChapterIDs = chapters.filter { $0.bookID == bookID }.map { $0.id }
                 
-                var chapterVerseMOs = [VerseMO]()
-                try currentChapterVerseIDs.forEach { verseID in
-                    if let verseMO = try context.fetchByID(objectType: VerseMO.self, id: verseID) {
-                        verseMO.chapter = chapterMO
-                        chapterVerseMOs.append(verseMO)
+                try currentBookChapterIDs.forEach { chapterID in
+                    guard let chapterMO = try context.fetchByID(objectType: ChapterMO.self, id: chapterID) else {
+                        print("unable to find chapter with ID \(chapterID)")
+                        return
                     }
+                    chapterMO.book = dbBook
+                    dbBook.addToChapters(chapterMO)
+                    
+                    let currentChapterVerseIDs = verses.filter { $0.chapterID == chapterID }.map { $0.id }
+                    
+                    try currentChapterVerseIDs.forEach { verseID in
+                        guard let verseMO = try context.fetchByID(objectType: VerseMO.self, id: verseID) else {
+                            print("unable to find verse with ID \(verseID)")
+                            return
+                        }
+                        verseMO.chapter = chapterMO
+                        chapterMO.addToVerses(verseMO)
+                    }
+                    
                 }
-                
-                chapterMO?.verses = NSSet(array: chapterVerseMOs)
             }
+            context.saveChanges()
         }
-        context.saveChanges()
     }
 }
 
